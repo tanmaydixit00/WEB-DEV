@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+}
+
+header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #e5e7eb;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.static-btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background-color: #0ea5e9;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.static-btn:hover {
+    background-color: #0284c7;
+}
+
+#about p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card {
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card {
+    background-color: white;
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 650px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #0ea5e9;
+}
+
+#contact p {
+    margin: 6px 0;
+}
+
+form {
+    max-width: 420px;
+    margin: 30px auto 0;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #cbd5f5;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0284c7;
+}
+
+footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
