@@ -1,0 +1,138 @@
+:root {
+    --primary: #4a90e2;
+    --secondary: #eef2f8;
+    --bg: #f5f7fb;
+    --text: #2c2c2c;
+    --card: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #eef2ff, #f9fbff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card */
+.quiz-container {
+    background: var(--card);
+    width: 560px;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+/* Progress bar */
+.progress {
+    height: 6px;
+    background: #e3e7f0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 40%;
+    background: var(--primary);
+    transition: width 0.4s ease;
+}
+
+/* Question */
+.question {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Options */
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.option:hover {
+    border-color: var(--primary);
+    background: #f0f6ff;
+}
+
+.option input {
+    accent-color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* Selected */
+.option input:checked + span {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 12px 26px;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary {
+    background: var(--primary);
+    color: white;
+}
+
+.primary:hover {
+    background: #357bd8;
+}
+
+.secondary {
+    background: #e8ebf1;
+}
+
+.secondary:hover {
+    background: #d9dde6;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .quiz-container {
+        width: 92%;
+        padding: 25px;
+    }
+}
