@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniCloud - Lost & Found</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Lost & Found Portal</h1>
+        
+    </header>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <h2>Add Item</h2>
+
+        <input type="text" id="itemName" placeholder="Item Name">
+        <input type="text" id="location" placeholder="Location">
+        <input type="text" id="contact" placeholder="Contact Info">
+        <input type="password" id="secret" placeholder="Secret Code (for removal)">
+
+        <select id="type">
+            <option value="Lost">Lost</option>
+            <option value="Found">Found</option>
+        </select>
+
+        <input type="file" id="itemImage" accept="image/*">
+
+        <button onclick="addItem()">Submit</button>
+
+        <!-- Optional: Clear All -->
+        <button onclick="clearAllData()" style="margin-top:10px;background:#ef4444;color:white;">
+            🧹 Clear All Data
+        </button>
+    </section>
+
+    <!-- Items Section -->
+    <section class="items" id="itemsList">
+        <!-- Cards will come from JavaScript -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="contact-us">
+        <h3>Contact Us</h3>
+
+        <div class="contact-details">
+            <p>Email: support@minicloud.com</p>
+            <p>Phone: +91 9999999999</p>
+        </div>
+
+        <p class="note">© 2026 MiniCloud. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
