@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Home — Simple Blog{% endblock %}
+
+{% block content %}
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <h1 class="hero-title">The Blog</h1>
+  <p class="hero-sub">Thoughts, ideas, and stories.</p>
+</section>
+
+<!-- ── Post Counter ── -->
+<div class="post-meta-bar">
+  <span class="post-count">{{ posts|length }} post{{ 's' if posts|length != 1 else '' }}</span>
+  <a href="{{ url_for('create') }}" class="btn btn-primary">Write something</a>
+</div>
+
+<!-- ── Post List ── -->
+{% if posts %}
+  <div class="post-grid">
+    {% for post in posts %}
+    <article class="post-card">
+      <!-- Post number badge -->
+      <span class="post-number">#{{ loop.index }}</span>
+
+      <h2 class="post-title">{{ post.title }}</h2>
+
+      <p class="post-excerpt">
+        {{ post.content[:180] }}{% if post.content|length > 180 %}…{% endif %}
+      </p>
+
+      <!-- Action buttons -->
+      <div class="post-actions">
+        <a href="{{ url_for('edit', post_id=post.id) }}" class="btn btn-secondary">
+          ✎ Edit
+        </a>
+
+        <!-- Delete uses a POST form for safety -->
+        <form
+          action="{{ url_for('delete', post_id=post.id) }}"
+          method="POST"
+          class="delete-form"
+          onsubmit="return confirm('Delete this post? This cannot be undone.');"
+        >
+          <button type="submit" class="btn btn-danger">✕ Delete</button>
+        </form>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+{% else %}
+  <!-- Empty state -->
+  <div class="empty-state">
+    <span class="empty-icon">📝</span>
+    <h2>No posts yet!</h2>
+    <p>Be the first to write something.</p>
+    <a href="{{ url_for('create') }}" class="btn btn-primary">Create your first post</a>
+  </div>
+{% endif %}
+
+{% endblock %}
